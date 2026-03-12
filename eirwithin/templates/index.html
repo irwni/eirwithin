@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <ul>
+    <!-- get_section hämtar en specifik sektion med sin sökväg -->
+    {% set blog = get_section(path="blog/_index.md") %}
+    {% for page in blog.pages %}
+      <li>
+        <a href="{{ page.permalink }}">{{ page.title }}</a>
+        <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

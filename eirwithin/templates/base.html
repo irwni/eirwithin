@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 'block' är Zolas sätt att låta undersidor byta ut delar av base.html.
+       Titeln blir t.ex. "Om mig | eirwithin" på undersidor, annars bara "eirwithin" -->
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <a href="/">{{ config.title }}</a>
+  </header>
+
+  <main>
+    <!-- Här injiceras innehållet från varje undersida -->
+    {% block content %}{% endblock content %}
+  </main>
+
+  <footer>
+    <p>{{ config.author }}</p>
+  </footer>
+</body>
+</html>
