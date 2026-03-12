@@ -1,0 +1,8 @@
+name = "eirwithin"
+compatibility_date = "2026-03-12"
+
+[build]
+command = "./build.sh"
+
+[assets]
+directory = "./public"
